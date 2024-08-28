@@ -35,7 +35,7 @@ function createCard(item) {
 
 const getAllProducts = async () => {
   const resultsList = document.querySelector(".card-container");
-  resultsList.innerHTML = "";
+  resultsList.innerHTML = "<h3>Loading Data from server...</h3>";
 
   const response = await fetch(`https://zimeshare-assignment.vercel.app/`);
   const data = await response.json();
@@ -54,7 +54,7 @@ document
     const resultsList = document.querySelector(".card-container");
 
     if (query.length > 3) {
-      resultsList.innerHTML = "";
+      resultsList.innerHTML = "<h3>Loading Data from server...</h3>";
       const response = await fetch(
         `https://zimeshare-assignment.vercel.app/search?q=${encodeURIComponent(
           query
