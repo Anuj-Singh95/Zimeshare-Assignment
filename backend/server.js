@@ -49,12 +49,14 @@ app.get("/search", async (req, res) => {
   try {
     const keyword = req.query.q
       ? {
-          $or: [{ title: { $regex: req.query.q, $options: "i" } }],
+          $or: [
+            { description: { $regex: req.query.q, $options: "i" } },
+            { title: { $regex: req.query.q, $options: "i" } },
+          ],
         }
       : {};
 
     const data = await Product.find(keyword);
-    //   res.send(post);
     res.status(200).json({
       success: "true",
       products: data,
