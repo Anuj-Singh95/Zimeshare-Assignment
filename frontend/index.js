@@ -37,7 +37,7 @@ const getAllProducts = async () => {
   const resultsList = document.querySelector(".card-container");
   resultsList.innerHTML = "";
 
-  const response = await fetch(`http://localhost:5000/`);
+  const response = await fetch(`https://zimeshare-assignment-ksm2.vercel.app/`);
   const data = await response.json();
 
   console.log(data);
@@ -56,7 +56,9 @@ document
     if (query.length > 3) {
       resultsList.innerHTML = "";
       const response = await fetch(
-        `http://localhost:5000/search?q=${encodeURIComponent(query)}`
+        `https://zimeshare-assignment-ksm2.vercel.app/search?q=${encodeURIComponent(
+          query
+        )}`
       );
       const data = await response.json();
 

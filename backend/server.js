@@ -7,10 +7,9 @@ const app = express();
 app.use(express.json());
 const port = 5000;
 
-// Configure CORS options
 const corsOptions = {
-  //   origin: "https://full-stack-assignment-frontend.vercel.app",
-  //   credentials: true, // Allow cookies
+  origin: "https://zimeshare-assignment-ksm2.vercel.app",
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
